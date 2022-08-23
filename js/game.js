@@ -29,7 +29,7 @@ let secondCard = "";
 
 const checkEndGame = () =>{
     const disabledCards = document.querySelectorAll(".disabled-card");
-    if(disabledCards.length == 20){
+    if(disabledCards.length === 20){
         clearInterval(this.loop);
 
         // alert(`Congratulations, ${spanPlayer.innerHTML}! Your time is : ${timer.innerHTML}`);
@@ -72,12 +72,14 @@ const revealCard = ({target}) =>{
     if(target.parentNode.className.includes("reveal-card")){
         return;
     }
-    if(firstCard == ""){
+    if(firstCard == "" && !target.parentNode.className.includes("grid")){
         target.parentNode.classList.add("reveal-card");
         firstCard = target.parentNode;
-    }else if(secondCard == ""){
+        console.log(target.parentNode)
+    }else if(secondCard === "" && !target.parentNode.className.includes("grid")){
         target.parentNode.classList.add("reveal-card");
         secondCard = target.parentNode;
+        console.log(target.parentNode)
 
         checkCards();
     }
@@ -88,7 +90,7 @@ const createCard = (character) => {
     const front = createElement("div", "face front")
     const back = createElement("div", "face back")
 
-    front.style.backgroundImage = `url('../images/${character}.png')`
+    front.style.backgroundImage = `url('../images/${character}.png')`;
 
     card.appendChild(front);
     card.appendChild(back);
@@ -106,12 +108,12 @@ const loadGame = () =>{
 
     const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
-    duplicateCharacters.forEach((character) =>{
+    shuffledArray.forEach((character) =>{
 
         const card = createCard(character);
         grid.appendChild(card);
 
-    })
+    });
 
 }
 
