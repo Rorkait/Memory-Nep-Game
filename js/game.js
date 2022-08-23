@@ -34,7 +34,7 @@ const checkEndGame = () =>{
 
         // alert(`Congratulations, ${spanPlayer.innerHTML}! Your time is : ${timer.innerHTML}`);
         setInterval(() =>{
-            window.location = "/pages/endgame.html";
+            window.location = "../pages/endgame.html";
         },2000)
 
     }
