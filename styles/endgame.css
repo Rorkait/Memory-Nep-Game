@@ -1,0 +1,28 @@
+#container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(149, 72, 250);
+    justify-content: center;
+}
+#content{
+    font-size: 1.5rem;
+    display: flex;
+    max-width: 80vw;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.button{
+    margin-top: 30px;
+    font-size: 1.5rem;
+    padding: 15px;
+    align-self: center;
+    width: 60%;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+button:hover{
+    background-color: rgb(215, 15, 185);
+}

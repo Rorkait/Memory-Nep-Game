@@ -31,7 +31,12 @@ const checkEndGame = () =>{
     const disabledCards = document.querySelectorAll(".disabled-card");
     if(disabledCards.length == 20){
         clearInterval(this.loop);
-        alert(`Congratulations, ${spanPlayer.innerHTML}! Your time is : ${timer.innerHTML}`);
+
+        // alert(`Congratulations, ${spanPlayer.innerHTML}! Your time is : ${timer.innerHTML}`);
+        setInterval(() =>{
+            window.location = "/pages/endgame.html";
+        },2000)
+
     }
 }
 
@@ -114,6 +119,7 @@ const startTimer = () =>{
     this.loop = setInterval(() =>{
         const currentTime = +timer.innerHTML;
         timer.innerHTML = currentTime +1;
+        localStorage.setItem("time", currentTime);
     },1000)
 
 }
